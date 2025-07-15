@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works Cited – Blurred Myths</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1c1930;
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #1c1930;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #ffe57f;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .works-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background-color: #2b2543;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .works-section.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .works-section h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: #ffe57f;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .works-section ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.8;
+    }
+
+    .works-section li {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="../index.html">← Back to Home</a>
+  </nav>
+
+  <!-- Works Cited Section -->
+  <section class="works-section scroll-reveal">
+    <h1>Works Cited</h1>
+    <ul>
+
+      <li>Homer. 2018. Odyssey. Translated by Emily Wilson. New York: W. W. Norton & Company, Inc.</li>
+      <li>‘Zeus allows the gods to enter the battle’ - Workshop of Bernard Picart, 1710.</li>
+      <li>“Zeus Comes in Many Forms Onscreen- Just as He Did in the Original Myths.” The University of Sydney, www.sydney.edu.au/news-opinion/news/2024/09/02/zeus-comes-in-many-forms-onscreen-just-as-he-did-in-the-original-myths.html#:~:text=The%20most%20common%20portrayal%20of,manipulates%20the%20activities%20of%20others. Accessed 14 July 2025. </li>  
+      <li>Gagarin, Michael, and Elaine Fantham. The Oxford Encyclopedia of Ancient Greece and Rome. Oxford University Press, 2010. </li>
+      <li>“Apollodorus, Library Sir James George Frazer, Ed.” Apollodorus, Library, Book 2, Chapter 4, www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0022%3Atext%3DLibrary%3Abook%3D2%3Achapter%3D4. Accessed 14 July 2025. </li>
+      <li>‘Perseus Kills Medusa’ - Bernard Picart (French, 1673 – 1733), The Rijksmuseum<li>
+      <li>‘Meeting of Odysseus and Penelope’ Francesco Bartolozzi, after John Francis Rigaud (Italian, 1727 – 1815)The Rijksmuseum<li>
+      <li>‘Hera in conversation with Zeus’ - Crispijn van de Passe (I), 1613<li>
+      <li>Ovid. Metamorphoses. Edited by R. J. Tarrant. Oxford University Press, 2004. Oxford Classical Texts.</li>
+      <!-- Add more as needed -->
+    </ul>
+  </section>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.scroll-reveal').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
+

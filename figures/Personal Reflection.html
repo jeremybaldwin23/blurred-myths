@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Reflection – Blurred Myths</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    nav {
+      background-color: #1c1930;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    nav a {
+      color: #ffe57f;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .content-section {
+      max-width: 850px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: #2b2543;
+      border-radius: 15px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .content-section.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-section h2 {
+      font-family: 'Cinzel', serif;
+      color: #ffe57f;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Greek_myth_mosaic.jpg');
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="../index.html">← Back to Home</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1 class="fade-in">Personal Reflection</h1>
+      <p class="fade-in delay">Why I created Blurred Myths — and what I’ve learned along the way</p>
+    </div>
+  </header>
+
+  <!-- Reflection Section -->
+  <section class="content-section scroll-reveal">
+    <h2>Context and Reflection</h2>
+    <p>
+      From the beginning of this course, I noticed that I did not really have the understanding I wanted
+      to have about ancienct mythology. It was during one of the assignments that allowed me to look at Ovid's
+      telling of Medusa's story. This quickly led me to realize that I wanted to know more if some gods or mythological
+      figures that I have held preconceived notions about were vastly different from the way I and most people viewed them.
+      At this time, I was traveling abroad in Paris and Rome. Even though it was tougher to think about the project,
+      seeing art pieces and architecture that resembled the subject matter of this course helped a ton. 
+      
+      Last semester, I learned how to build a website for my organization
+      and found it quite enjoyable, so I decided that I would like to create a new one for not only this project, but also potentially
+      for some sort of personal porfolio. I really wanted to build on the skills I developed during the school year. This is how I started Blurred Myths.
+      Throughout the semester, I learned more about Odysseus and really started to question his morals. Originally, I only wanted to 
+      deep dive into Medusa's story, but after reading the Odyssey, I wanted to look into Odysseus and Zeus as they were questionable in my opinion.
+      I also remember loving Hades as a child but I did not end up having enough time to add him into this project. In the future, however, 
+      I would love to incorporate him as well as Athena into the website! Maybe I could add some sort of survey into the home page to see what
+      the user's opinions are about Greek and Roman gods. The most challenging part of completing this project was figuring out how
+      I wanted to organize project. I didn't know how I wanted each page to look like and what kind of information to add on each page. To overcome this,
+      I sat down for around 2 hours and created a mindmap and then eventually a sample website on paper. This really allowed me to visualize my ideas 
+      before I started to code.
+      Once I started coding, I was able to get things going relatively fast. The entirety of each page took around a day to complete. Because I was able to 
+      code for my organization at UT, I felt confident that I would complete the project on time. However, I was not able to finish in a timely manner due to
+      traveling and other circumstances, but I am glad and mostly satisfied in the work that I have done.
+    <p>
+        
+    </p>
+  </section>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.scroll-reveal').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>

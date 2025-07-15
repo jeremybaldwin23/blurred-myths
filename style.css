@@ -1,0 +1,144 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #1e1b2e;
+  color: #f3f3f3;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  background:url(pictures/Hero_page.png)no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(20, 20, 40, 0.7), rgba(10, 10, 30, 0.95));
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.hero-text h1 {
+  font-size: 4rem;
+  font-family: 'Cinzel', serif;
+}
+.hero-text p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+.fade-in.delay {
+  animation-delay: 1s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Figure Cards */
+.figure-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 7rem 2rem;
+  gap: 7rem;
+  background: #1e1b2e;
+}
+
+.figure-card {
+  text-decoration: none;
+  color: #fff;
+  width: 280px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+}
+.figure-card.large {
+  width: 320px;
+}
+.figure-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(173, 136, 255, 0.6);
+}
+.figure {
+  height: 350px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+span {
+  display: block;
+  font-size: 1.5rem;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffe57f;
+}
+
+/* Background Images for Each Character */
+.medusa {
+  background-image: url('pictures/medusa.jpg');
+}
+.zeus {
+  background-image: url('pictures/zeus.jpg');
+}
+.odysseus {
+  background-image: url('pictures/odysseus.jpg');
+}
+.sources {
+  background-image: url('https://static.thenounproject.com/png/27835-200.png');
+}
+.reflection {
+  background-image: url('https://sswm.info/sites/default/files/factsheet_icons/2.2.4.png');
+}
+.purpose-section {
+  background-color: #2b2543;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans', sans-serif;
+  animation: fadeIn 1s ease forwards;
+}
+
+.purpose-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffe57f;
+}
+
+.purpose-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
